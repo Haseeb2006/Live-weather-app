@@ -12,6 +12,14 @@
             <input type="text" name="city" id="city" required>
             <button type="submit">Get Weather</button>
         </form>
+        
+        <!-- Add a button to toggle temperature scale -->
+        <form method="POST" action="/weather">
+            <input type="hidden" name="city" value="{{ city }}">
+            <button type="submit" name="scale" value="metric">Celsius</button>
+            <button type="submit" name="scale" value="imperial">Fahrenheit</button>
+        </form>
+        
         <div class="weather-data">
             <p id="location">Location: {{ weather_data.location if weather_data else 'N/A' }}</p>
             <p id="temperature">Temperature: {{ weather_data.temperature if weather_data else 'N/A' }}</p>

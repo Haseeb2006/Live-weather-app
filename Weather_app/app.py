@@ -15,10 +15,10 @@ def index():
 def weather():
     city = request.form['city']
     
-    # Check if the temperature scale button was clicked
+
     scale = request.form.get('scale', 'metric')
     
-    # Update the units based on the button clicked
+
     global UNITS
     UNITS = scale
     
@@ -32,7 +32,7 @@ def fetch_weather_data(city):
         'appid': API_KEY,
     }
     response = requests.get(WEATHER_API_URL, params=params)
-    print(response.url)  # Print the URL being requested
+    print(response.url) 
     if response.status_code == 200:
         data = response.json()
         return {
@@ -49,3 +49,4 @@ def fetch_weather_data(city):
 
 if __name__ == '__main__':
     app.run(debug=True)
+

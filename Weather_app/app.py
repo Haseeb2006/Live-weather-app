@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 API_KEY = "9e54e95c58ee629d0c66ba20c5d87993"
 WEATHER_API_URL = "http://api.openweathermap.org/data/2.5/weather"
-UNITS = "metric"  # Default units: Celsius
+UNITS = "metric"  
 
 @app.route('/')
 def index():
